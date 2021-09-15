@@ -5,11 +5,22 @@ import middleware.context as context
 
 def _get_db_connection():
 
-    db_connect_info = context.get_db_info()
+    # db_connect_info = context.get_db_info()
 
-    print("Connection info = \n", json.dumps(db_connect_info, indent=2, default=str))
+    # print("Connection info = \n", json.dumps(db_connect_info, indent=2, default=str))
 
-    db_connection = pymysql.connect(**db_connect_info)
+    db_conncet__info = {
+        "host": "localhost",
+        "user": "dbuser",
+        "password": "dbuserdbuser",
+        "cursorclass": pymysql.cursors.DictCursor
+    }
+    db_connection = pymysql.connect(
+        host="localhost",
+        user="dbuser",
+        password="dbuserdbuser",
+        cursorclass=pymysql.cursors.DictCursor
+    )
     return db_connection
 
 

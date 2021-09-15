@@ -11,7 +11,7 @@ CORS(app)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return '<u>>Hello World!</u>'
 
 
 @app.route('/imdb/artists/<prefix>')
