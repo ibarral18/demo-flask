@@ -10,13 +10,19 @@
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
+  `user_no` int NOT NULL AUTO_INCREMENT,
   `username` varchar(128) NOT NULL,
-  `first_name` text DEFAULT NULL,
-  `last_name` text DEFAULT NULL,
+  `first_name` text,
+  `last_name` text,
   `email` text NOT NULL,
   `birth_year` varchar(45) DEFAULT NULL,
-  `favorite_film` text DEFAULT NULL
-) ENGINE=InnoDB;
+  `middle_name` text,
+  `status` varchar(45) DEFAULT NULL,
+  `created_time` datetime DEFAULT NULL,
+  `updated_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`user_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 
 -- Dump completed on 2020-11-29 10:25:16
