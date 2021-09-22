@@ -13,7 +13,6 @@ def get_db_info():
     db_host = os.environ.get("DBHOST", None)
 
     if db_host is None:
-
         db_info = {
             "host": "localhost",
             "user": "dbuser",

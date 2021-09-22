@@ -4,7 +4,7 @@ from flask_cors import CORS
 import json
 
 from application_services.imdb_artists_resource import IMDBArtistResource
-
+from application_services.user_service import UserResource
 app = Flask(__name__)
 CORS(app)
 
@@ -20,6 +20,13 @@ def get_artists_by_prefix(prefix):
     rsp = Response(json.dumps(res), status=200, content_type="application/json")
     return rsp
 
+@app.route('/users')
+def get_users():
+    res = UserResource.get_by_template()
+    rsp = Response(json.dumps(res, default = str), status=200, content_type="application/json")
+    return rsp
+
+# http://160.39.188.227:5000/w6156/user/first_name/iv
 
 @app.route('/<db_schema>/<table_name>/<column_name>/<prefix>')
 def get_by_prefix(db_schema, table_name, column_name, prefix):
